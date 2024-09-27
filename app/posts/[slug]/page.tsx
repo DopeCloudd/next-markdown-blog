@@ -17,8 +17,8 @@ export default async function Post({ params }: Params) {
 
   return (
     <main>
-      <div className="container mx-auto px-5">
-        <article className="mb-32">
+      <div className="max-w-[1200px] py-8 mx-auto px-5 md:px-0">
+        <article>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
