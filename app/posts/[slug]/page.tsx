@@ -5,6 +5,9 @@ import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/(components)/posts/post.body";
 import { PostHeader } from "@/app/(components)/posts/post.header";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -19,6 +22,15 @@ export default async function Post({ params }: Params) {
     <main>
       <div className="max-w-[1200px] py-8 mx-auto px-5 md:px-0">
         <article>
+          <Link
+            href="/"
+            className={`border ${buttonVariants({
+              variant: "outline",
+            })} w-full md:w-auto mb-4`}
+          >
+            <ArrowLeft />
+            Retour
+          </Link>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
@@ -45,7 +57,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Blog de Valentin LEROUGE`;
 
   return {
     title,
