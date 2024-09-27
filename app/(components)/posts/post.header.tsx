@@ -16,25 +16,20 @@ export function PostHeader({ title, coverImage, date, author }: Props) {
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
         {title}
       </h1>
-      <div className="hidden md:block md:mb-12">
-        <Avatar>
-          <AvatarImage src={author.picture} alt={author.name} />
-          <AvatarFallback>{author.name}</AvatarFallback>
-        </Avatar>
-      </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
+      <div className="md:mb-12">
+        <div className="flex items-center gap-4">
           <Avatar>
             <AvatarImage src={author.picture} alt={author.name} />
             <AvatarFallback>{author.name}</AvatarFallback>
           </Avatar>
+          <div className="text-xl font-bold">{author.name}</div>
         </div>
-        <div className="mb-6 text-lg">
+        <div className="mt-2 text-lg">
           <DateFormatter dateString={date} />
         </div>
+      </div>
+      <div className="mb-8 md:mb-16 sm:mx-0">
+        <CoverImage title={title} src={coverImage} />
       </div>
     </>
   );
