@@ -1,6 +1,6 @@
 ---
-title: "Les avantages d'une présence en ligne ?"
-excerpt: "Vous vous demandez quels sont les avantages d'avoir un site web pour votre business ou votre entreprise ? Qu'est ce qu'un site web peut réellement vous apportez ? Je vais vous répondre..."
+title: "Vos compétences techniques ne suffisent plus pour avoir un job !"
+excerpt: "C'est un fait avéré, les compétences techniques ne suffisent pas pour trouver un job dans l'informatique et dans tous les domaines en générales. Voici pourquoi."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024-09-26T05:35:07.322Z"
 author:

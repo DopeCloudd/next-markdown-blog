@@ -1,6 +1,6 @@
 ---
-title: "Les avantages d'une présence en ligne ?"
-excerpt: "Vous vous demandez quels sont les avantages d'avoir un site web pour votre business ou votre entreprise ? Qu'est ce qu'un site web peut réellement vous apportez ? Je vais vous répondre..."
+title: "Réussir mes entretiens et tests techniques."
+excerpt: "Dans cet article, nous allons aborder la stratégie miracle pour que vous ayez toutes les clés afin de réussir tout vos prochains entretiens."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024-09-26T05:35:07.322Z"
 author:

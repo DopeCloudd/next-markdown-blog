@@ -1,6 +1,6 @@
 ---
-title: "Les avantages d'une présence en ligne ?"
-excerpt: "Vous vous demandez quels sont les avantages d'avoir un site web pour votre business ou votre entreprise ? Qu'est ce qu'un site web peut réellement vous apportez ? Je vais vous répondre..."
+title: "Freelance et CDI : Possible de s'entendre ?"
+excerpt: "Vous aimeriez démarrer votre aventure de freelance mais vous appréhendez cette période d'incertitude et d'aventure qu'offre la freelance ? Pourquoi pas commencer durant votre CDI ?"
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024-09-26T05:35:07.322Z"
 author:

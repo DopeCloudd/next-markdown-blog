@@ -1,6 +1,6 @@
 ---
-title: "Les avantages d'une présence en ligne ?"
-excerpt: "Vous vous demandez quels sont les avantages d'avoir un site web pour votre business ou votre entreprise ? Qu'est ce qu'un site web peut réellement vous apportez ? Je vais vous répondre..."
+title: "Comment définir le besoin de mon projet ?"
+excerpt: "Vous aimeriez avoir un site/application web pour votre business ou votre projet mais vous ne savez pas le rendu ni les fonctionnalités souhaitées. Nous allons vous aider dans cette démarche."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024-09-26T05:35:07.322Z"
 author:

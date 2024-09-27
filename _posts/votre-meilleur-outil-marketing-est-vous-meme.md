@@ -1,6 +1,6 @@
 ---
-title: "Les avantages d'une présence en ligne ?"
-excerpt: "Vous vous demandez quels sont les avantages d'avoir un site web pour votre business ou votre entreprise ? Qu'est ce qu'un site web peut réellement vous apportez ? Je vais vous répondre..."
+title: "Votre meilleur outil de marketing est VOUS même."
+excerpt: "Pas besoin de faire des campagnes Google Ads ou Facebook Ads si le produit que vous vendez est votre service. Votre client ne consomme une publicité dans votre cas mais votre service qui est produit par vous, le client cherche une personne avant de voir son service."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2024-09-26T05:35:07.322Z"
 author:
