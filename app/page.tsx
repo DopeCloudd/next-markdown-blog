@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getAllPosts } from "@/lib/api";
 import { PostsList } from "@/app/(components)/posts/posts.list";
 
