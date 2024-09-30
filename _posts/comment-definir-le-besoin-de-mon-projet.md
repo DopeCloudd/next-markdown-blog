@@ -1,13 +1,13 @@
 ---
 title: "Comment définir le besoin de mon projet ?"
 excerpt: "Vous aimeriez avoir un site/application web pour votre business ou votre projet mais vous ne savez pas le rendu ni les fonctionnalités souhaitées. Nous allons vous aider dans cette démarche."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
+coverImage: "/assets/blog/articles/definir-mon-besoin.png"
 date: "2024-09-26T05:35:07.322Z"
 author:
   name: Valentin LEROUGE
   picture: "/assets/blog/authors/valentin.png"
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/assets/blog/articles/definir-mon-besoin.png"
 publish: true
 ---
 
