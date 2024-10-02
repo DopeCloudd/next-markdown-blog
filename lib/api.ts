@@ -1,30 +1,64 @@
-import { Post } from "@/interfaces/post";
 import fs from "fs";
-import matter from "gray-matter";
 import { join } from "path";
+import matter from "gray-matter";
+import { z } from "zod";
+import { type Post } from "@/interfaces/post";
+
+// Définition du schéma de validation pour un article
+const PostSchema = z.object({
+  title: z.string().max(65),
+  date: z.string(),
+  coverImage: z.string().optional(),
+  author: z.object({
+    name: z.string(),
+    picture: z.string().optional(),
+  }),
+  excerpt: z.string(),
+  ogImage: z
+    .object({
+      url: z.string(),
+    })
+    .optional(),
+  publish: z.boolean().optional().default(false),
+  content: z.string(),
+  preview: z.boolean().optional(),
+});
 
 const postsDirectory = join(process.cwd(), "_posts");
 
+// Récupération des slugs des articles
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(postsDirectory).filter((file) => file.endsWith(".mdx"));
 }
 
-export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+// Récupération d'un article par son slug
+export function getPostBySlug(slug: string): Post | null {
+  const realSlug = slug.replace(/\.mdx$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, slug: realSlug, content } as Post;
+  // Valider l'article en utilisant zod
+  const parsedData = PostSchema.safeParse({ ...data, content });
+
+  if (!parsedData.success) {
+    console.error(`Erreur de validation pour le slug : ${realSlug}`);
+    parsedData.error.issues.forEach((issue) => {
+      console.error(`  - ${issue.path.join(" -> ")}: ${issue.message}`);
+    });
+    return null;
+  }
+
+  // Retourner l'article formaté
+  return { ...parsedData.data, slug: realSlug } as Post;
 }
 
+// Récupération de tous les articles publiés
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    // filter posts that are not published for production
-    .filter((post) => post.publish)
-    // sort posts by date in descending order
+    .filter((post): post is Post => post !== null && post.publish)
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
