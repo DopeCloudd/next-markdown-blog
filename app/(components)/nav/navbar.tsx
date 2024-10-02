@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <nav className="max-w-[1200px] w-full mx-auto h-[80px] flex items-center justify-between border-b py-5">
+    <nav className="max-w-[1200px] w-full mx-auto h-[80px] flex items-center justify-between border-b py-5 px-4">
       <div className="flex items-center">
         <Link href="/">
           <h1 className="text-2xl font-bold ml-2">Blog | Valentin LEROUGE</h1>
