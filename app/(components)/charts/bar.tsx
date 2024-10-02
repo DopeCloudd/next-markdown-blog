@@ -83,7 +83,7 @@ export function BarChartAvantages() {
         <CardFooter className="flex-col items-start gap-2 text-sm">
           <div className="leading-none text-muted-foreground">
             Pourcentage de visibilité sur le web d'une entreprise avec et sans
-            site vitrine
+            site internet.
           </div>
         </CardFooter>
       </Card>
