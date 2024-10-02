@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -26,6 +32,11 @@
     --radius: 0.5rem;
     --duration: 20s;
     --gap: 1rem;
+    --chart-1: 293 69% 49%;
+    --chart-2: 221 83% 53%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -50,6 +61,11 @@
     --ring: 193 89% 63%; /* Same ring color */
     --duration: 20s;
     --gap: 1rem;
+    --chart-1: 293 69% 49%;
+    --chart-2: 221 83% 53%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 

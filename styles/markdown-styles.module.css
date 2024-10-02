@@ -16,3 +16,12 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown code .highlighted {
+  background: hsl(var(--primary) / 0.2) !important;
+  transition: background-color 0.5s;
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+  width: calc(100% + 48px);
+  display: inline-block;
+}
