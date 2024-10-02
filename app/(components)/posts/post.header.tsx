@@ -2,6 +2,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import { type Author } from "@/interfaces/author";
+import React from "react";
 
 type Props = {
   title: string;

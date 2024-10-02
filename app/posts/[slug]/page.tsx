@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/app/(components)/posts/post.body";
 import { PostHeader } from "@/app/(components)/posts/post.header";
 import { buttonVariants } from "@/components/ui/button";
@@ -14,8 +13,6 @@ export default async function Post({ params }: Params) {
   if (!post) {
     return notFound();
   }
-
-  const content = await markdownToHtml(post.content || "");
 
   return (
     <main>
@@ -36,7 +33,7 @@ export default async function Post({ params }: Params) {
             date={post.date}
             author={post.author}
           />
-          <PostBody content={content} />
+          <PostBody content={post.content} />
         </article>
       </div>
     </main>

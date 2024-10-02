@@ -1,3 +1,4 @@
+import { Mdx } from "@/mdx/Mdx";
 import markdownStyles from "@/styles/markdown-styles.module.css";
 
 type Props = {
@@ -7,10 +8,9 @@ type Props = {
 export function PostBody({ content }: Props) {
   return (
     <div className="max-w-[1200px] mx-auto">
-      <div
-        className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      <div className={markdownStyles["markdown"]}>
+        <Mdx>{content}</Mdx>
+      </div>
     </div>
   );
 }
