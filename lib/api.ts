@@ -6,7 +6,7 @@ import { type Post } from "@/interfaces/post";
 
 // Définition du schéma de validation pour un article
 const PostSchema = z.object({
-  title: z.string().max(65),
+  title: z.string(),
   date: z.string(),
   coverImage: z.string().optional(),
   author: z.object({
