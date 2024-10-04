@@ -2,18 +2,18 @@ import rehypeShiki from "@shikijs/rehype";
 import { transformerNotationHighlight } from "@shikijs/transformers";
 import type { ShikiTransformer } from "shiki/core";
 import type { PluggableList } from "unified";
+import rehypeSlug from "rehype-slug";
 
+// Fonction utilitaire pour extraire le nom de fichier
 const getFileName = (raw?: string): string | null => {
   if (!raw) return null;
 
   const items = raw.split(" ");
   for (const item of items) {
     const splitItem = item.split(".");
-
     if (splitItem.length === 1) continue;
 
     const extension = splitItem.at(-1);
-
     if (extension?.length === 0) continue;
 
     return splitItem.join(".");
@@ -21,6 +21,7 @@ const getFileName = (raw?: string): string | null => {
   return null;
 };
 
+// Transformer pour ajouter des classes de langage et le nom de fichier
 const transformerMetadataLanguageClassName = (): ShikiTransformer => {
   let language = "js";
   let fileName: string | null = null;
@@ -42,7 +43,9 @@ const transformerMetadataLanguageClassName = (): ShikiTransformer => {
   };
 };
 
+// Configuration des plugins Shiki
 const shikiPlugin = [
+  rehypeSlug,
   rehypeShiki,
   {
     theme: "github-dark",
@@ -53,4 +56,5 @@ const shikiPlugin = [
   },
 ] satisfies PluggableList[number];
 
+// Exportation des plugins
 export const rehypePlugin = [shikiPlugin] satisfies PluggableList;
