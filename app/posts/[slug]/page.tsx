@@ -6,13 +6,17 @@ import { PostHeader } from "@/app/(components)/posts/post.header";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { extractHeadings } from "@/util/extractHeadings";
 
 export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug); // Utilisation correcte de async/await
 
   if (!post) {
     return notFound();
   }
+
+  // Extraction des titres
+  const headings = extractHeadings(post.content);
 
   return (
     <main>
@@ -33,7 +37,8 @@ export default async function Post({ params }: Params) {
             date={post.date}
             author={post.author}
           />
-          <PostBody content={post.content} />
+          <PostBody content={post.content} headings={headings} />{" "}
+          {/* Passage des titres */}
         </article>
       </div>
     </main>
@@ -45,29 +50,3 @@ type Params = {
     slug: string;
   };
 };
-
-export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const title = `${post.title} | Blog de Valentin LEROUGE`;
-
-  return {
-    title,
-    openGraph: {
-      title,
-      images: [post.ogImage.url],
-    },
-  };
-}
-
-export async function generateStaticParams() {
-  const posts = getAllPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
