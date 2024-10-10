@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Blog",
   description: "Blog de Valentin LEROUGE",
+  icons: {
+    icon: "/pp_icon.png",
+  },
 };
 
 export default function RootLayout({
