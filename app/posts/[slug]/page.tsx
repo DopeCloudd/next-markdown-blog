@@ -8,6 +8,28 @@ import Link from "next/link";
 import { extractHeadings } from "@/util/extractHeadings";
 import Head from "next/head";
 
+export async function generateMetadata({ params }: Params) {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) {
+    return {
+      title: "Post not found",
+      description: "The requested post could not be found.",
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://blog.valentin-lerouge.fr/${post.slug}`,
+      type: "article",
+    },
+  };
+}
+
 export default async function Post({ params }: Params) {
   const post = await getPostBySlug(params.slug); // Utilisation correcte de async/await
 
