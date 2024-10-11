@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import { getPostBySlug } from "@/lib/api";
 import { PostBody } from "@/app/(components)/posts/post.body";
 import { PostHeader } from "@/app/(components)/posts/post.header";
@@ -8,13 +9,15 @@ import Link from "next/link";
 import { extractHeadings } from "@/util/extractHeadings";
 import Head from "next/head";
 
-export async function generateMetadata({ params }: Params) {
+export const generateMetadata = async ({
+  params,
+}: Params): Promise<Metadata> => {
   const post = await getPostBySlug(params.slug);
 
   if (!post) {
     return {
-      title: "Post not found",
-      description: "The requested post could not be found.",
+      title: "404 - Page Not Found",
+      description: "Page not found",
     };
   }
 
@@ -24,11 +27,11 @@ export async function generateMetadata({ params }: Params) {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://blog.valentin-lerouge.fr/${post.slug}`,
+      url: `https://blog.valentin-lerouge.fr/posts/${post.slug}`,
       type: "article",
     },
   };
-}
+};
 
 export default async function Post({ params }: Params) {
   const post = await getPostBySlug(params.slug); // Utilisation correcte de async/await
